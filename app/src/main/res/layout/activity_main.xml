@@ -1,18 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:gravity="top"
+    android:orientation="vertical">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/TvSimpleCalculator"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#3F51B5"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="Basic Calculator"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <TextView
+        android:id="@+id/TvResultWindow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:inputType="text"
+        android:padding="24dp"
+        android:hint="Result wll be displayed here."/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/Btn1"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/One" />
+
+        <Button
+            android:id="@+id/Btn2"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Two" />
+
+        <Button
+            android:id="@+id/Btn3"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Three" />
+
+        <Button
+            android:id="@+id/BtnAdd"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Add" />
+        <Button
+            android:id="@+id/BtnMultiply"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Multiply" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/Btn4"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Four" />
+
+        <Button
+            android:id="@+id/Btn5"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Five" />
+
+        <Button
+            android:id="@+id/Btn6"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Six" />
+
+        <Button
+            android:id="@+id/BtnSubtract"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Subtract" />
+        <Button
+            android:id="@+id/BtnDivide"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Divide" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/Btn7"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Seven" />
+
+        <Button
+            android:id="@+id/Btn8"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Eight" />
+
+        <Button
+            android:id="@+id/Btn9"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Nine" />
+
+        <Button
+            android:id="@+id/BtnSqrt"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Sqrt" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/Btn0"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Zero" />
+
+        <Button
+            android:id="@+id/BtnDecimal"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Decimal" />
+
+        <Button
+            android:id="@+id/BtnEqual"
+            android:layout_width="146dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:text="@string/Equal" />
+
+
+    </LinearLayout>
+</LinearLayout>
