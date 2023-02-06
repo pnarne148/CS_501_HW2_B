@@ -3,15 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="24dp"
+    android:weightSum="10">
 
     <TextView
         android:id="@+id/TvSimpleCalculator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:layout_marginBottom="10dp"
         android:background="#3F51B5"
         android:fontFamily="sans-serif-black"
@@ -21,166 +21,239 @@
         android:textStyle="bold"
         android:textColor="@android:color/white"/>
 
-
-
-
+    <EditText
+        android:id="@+id/TvInputWindow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="10dp"
+        android:hint="0.0"
+        android:inputType="text"
+        android:paddingVertical="36dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="8dp"
+        android:textAlignment="textEnd"
+        android:scrollHorizontally="true"
+        android:textSize="34sp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:background="@null"
+        />
 
     <TextView
         android:id="@+id/TvResultWindow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
         android:layout_margin="10dp"
         android:inputType="text"
-        android:padding="24dp"
-        android:hint="Result wll be displayed here."/>
-
-
+        android:paddingRight="8dp"
+        android:paddingLeft="6dp"
+        android:textAlignment="textEnd"
+        android:textSize="34sp"
+        android:textColor="#808188"
+        android:hint="0.0"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:weightSum="4"
+        android:paddingHorizontal="4dp">
+
+        <Button
+            android:id="@+id/BtnClear"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:text="@string/Clear" />
+
+        <Button
+            android:id="@+id/BtnBackBtn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:text="D" />
+
+        <Button
+            android:id="@+id/BtnSqrt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:text="@string/Sqrt" />
+
+        <Button
+            android:id="@+id/BtnAdd"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="1dp"
+            android:text="@string/Add" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        android:paddingHorizontal="4dp">
 
         <Button
             android:id="@+id/Btn1"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/One" />
 
         <Button
             android:id="@+id/Btn2"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Two" />
 
         <Button
             android:id="@+id/Btn3"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Three" />
 
         <Button
-            android:id="@+id/BtnAdd"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/BtnSubstract"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
-            android:text="@string/Add" />
-        <Button
-            android:id="@+id/BtnMultiply"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="@string/Multiply" />
+            android:text="@string/Subtract" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingHorizontal="5dp">
 
         <Button
             android:id="@+id/Btn4"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
+            android:layout_weight="1"
             android:text="@string/Four" />
 
         <Button
             android:id="@+id/Btn5"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:layout_margin="1dp"
             android:text="@string/Five" />
 
         <Button
             android:id="@+id/Btn6"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Six" />
 
         <Button
-            android:id="@+id/BtnSubtract"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/BtnMultiply"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
-            android:text="@string/Subtract" />
-        <Button
-            android:id="@+id/BtnDivide"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="@string/Divide" />
+            android:text="@string/Multiply" />
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
+        android:weightSum="4"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:paddingHorizontal="4dp">
 
         <Button
             android:id="@+id/Btn7"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Seven" />
 
         <Button
             android:id="@+id/Btn8"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Eight" />
 
         <Button
             android:id="@+id/Btn9"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Nine" />
 
         <Button
-            android:id="@+id/BtnSqrt"
-            android:layout_width="146dp"
-            android:layout_height="wrap_content"
+            android:id="@+id/BtnDivide"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
-            android:text="@string/Sqrt" />
+            android:text="/" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1.1"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:weightSum="4"
+        android:paddingHorizontal="4dp">
 
         <Button
             android:id="@+id/Btn0"
-            android:layout_width="146dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Zero" />
 
         <Button
             android:id="@+id/BtnDecimal"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Decimal" />
 
         <Button
             android:id="@+id/BtnEqual"
-            android:layout_width="146dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:layout_margin="1dp"
             android:text="@string/Equal" />
 
-
     </LinearLayout>
+
 </LinearLayout>
