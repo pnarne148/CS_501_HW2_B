@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -90,6 +91,22 @@ class MainActivity : AppCompatActivity() {
         binding.BtnSqrt.setOnClickListener {
             operatorClick("sqrt")
         }
+        binding.BtnEqual.setOnClickListener {
+            if (!clear)
+            {
+                binding.TvResultWindow.setText("")
+                binding.TvInputWindow.setText(outputParser(CalculatorModel.solve(binding.TvInputWindow.text.toString()).toString()))
+            }
+        }
+    }
+
+    private fun outputParser(s : String): String {
+        var output = s.toDouble()
+        if(output - output.toInt() <= 0.0)
+        {
+            return output.toInt().toString()
+        }
+        return String.format("%.3f", output)
     }
 
     private fun operatorClick(s: String) {
@@ -100,7 +117,10 @@ class MainActivity : AppCompatActivity() {
                 "*" -> binding.TvInputWindow.append(" * ")
                 "/" -> binding.TvInputWindow.append(" / ")
                 "%" -> binding.TvInputWindow.append(" % ")
-                "sqrt" -> binding.TvInputWindow.setText("Sqrt(" + binding.TvInputWindow.text + ")")
+                "sqrt" -> {
+                    binding.TvResultWindow.setText("")
+                    binding.TvInputWindow.setText(outputParser(CalculatorModel.sqrt(binding.TvInputWindow.text.toString())))
+                }
                 else -> Toast.makeText(this, "INVALID", Toast.LENGTH_SHORT).show()
             }
             if(s != "sqrt")
@@ -152,6 +172,7 @@ class MainActivity : AppCompatActivity() {
         while (binding.TvInputWindow.text[0]=='0')
             binding.TvInputWindow.setText(binding.TvInputWindow.text.drop(1))
 
+        binding.TvResultWindow.setText(outputParser(CalculatorModel.solve(binding.TvInputWindow.text.toString()).toString()))
         operator = false
     }
 
