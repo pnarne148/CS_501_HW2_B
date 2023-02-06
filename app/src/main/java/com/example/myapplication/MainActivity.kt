@@ -206,5 +206,5 @@ class MainActivity : AppCompatActivity() {
         System.out.println(input1.toDouble())
         return input1.toDouble()
     }
-}
+
 }
