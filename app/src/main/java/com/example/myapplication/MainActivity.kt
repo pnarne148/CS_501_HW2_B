@@ -95,7 +95,19 @@ class MainActivity : AppCompatActivity() {
             if (!clear)
             {
                 binding.TvResultWindow.setText("")
-                binding.TvInputWindow.setText(outputParser(CalculatorModel.solve(binding.TvInputWindow.text.toString()).toString()))
+                try {
+                    binding.TvInputWindow.setText(
+                        outputParser(
+                            CalculatorModel.solve(binding.TvInputWindow.text.toString()).toString()
+                        )
+                    )
+                }
+                catch (exc: Throwable)
+                {
+                    binding.TvInputWindow.setText(
+                        outputParser("NaN")
+                    )
+                }
             }
         }
     }
@@ -163,16 +175,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun numberClick(i: Int) {
-        if(clear) {
+        if (clear) {
             binding.TvInputWindow.setText("")
             clear = false
         }
 
         binding.TvInputWindow.append(i.toString())
-        while (binding.TvInputWindow.text[0]=='0')
+        while (binding.TvInputWindow.text[0] == '0')
             binding.TvInputWindow.setText(binding.TvInputWindow.text.drop(1))
-
-        binding.TvResultWindow.setText(outputParser(CalculatorModel.solve(binding.TvInputWindow.text.toString()).toString()))
+        try {
+            binding.TvResultWindow.setText(
+                outputParser(
+                    CalculatorModel.solve(binding.TvInputWindow.text.toString()).toString()
+                )
+            )
+        } catch (exc: Throwable)
+        {
+            binding.TvResultWindow.setText("NaN")
+        }
         operator = false
     }
 
