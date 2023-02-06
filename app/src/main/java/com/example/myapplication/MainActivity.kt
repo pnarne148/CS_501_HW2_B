@@ -159,4 +159,54 @@ class MainActivity : AppCompatActivity() {
         binding.TvInputWindow.setText("0.0")
         binding.TvResultWindow.setText("")
     }
+    fun solve(input1: String): Double {
+        var div = input1.split("-")
+        if (div.size>1)
+        {
+            var result = solve(div[0])
+            for (d in div.drop(1))
+            {
+                result -= solve(d)
+            }
+            return result
+        }
+
+        div = input1.split("+")
+        if (div.size>1)
+        {
+            var result = 0.0
+            for (d in div)
+            {
+                result += solve(d)
+            }
+            return result
+        }
+
+        div = input1.split("*")
+        if (div.size>1)
+        {
+            var result = 1.0
+            for (d in div)
+            {
+                result *= solve(d)
+            }
+            return result
+        }
+
+        div = input1.split("/")
+        if (div.size>1)
+        {
+            var result = solve(div[0])
+            for (d in div.drop(1))
+            {
+                result /= solve(d)
+            }
+            return result
+        }
+        System.out.println(input1.toDouble())
+        return input1.toDouble()
+    }
+}
+    
+
 }
